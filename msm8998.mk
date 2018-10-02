@@ -29,6 +29,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-custom
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/xiaomi/msm8998-common
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
