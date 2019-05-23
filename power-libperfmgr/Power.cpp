@@ -40,6 +40,9 @@ using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 
+constexpr char kPowerHalInitProp[] = "vendor.powerhal.init";
+constexpr char kPowerHalConfigPath[] = "/vendor/etc/powerhint.json";
+
 Power::Power() :
         mHintManager(nullptr),
         mInteractionHandler(nullptr),
@@ -49,11 +52,12 @@ Power::Power() :
     mInitThread =
             std::thread([this](){
                             android::base::WaitForProperty(kPowerHalInitProp, "1");
-                            mHintManager = HintManager::GetFromJSON("/vendor/etc/powerhint.json");
+                            mHintManager = HintManager::GetFromJSON(kPowerHalConfigPath);
                             mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
                             mInteractionHandler->Init();
                             // Now start to take powerhint
                             mReady.store(true);
+                            ALOGI("PowerHAL ready to process hints");
                         });
     mInitThread.detach();
 }
@@ -64,7 +68,7 @@ Return<void> Power::setInteractive(bool /* interactive */)  {
 }
 
 Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
-    if (!isSupportedGovernor() || !mReady) {
+    if (!mReady) {
         return Void();
     }
 
@@ -134,27 +138,13 @@ Return<void> Power::getSubsystemLowPowerStats(getSubsystemLowPowerStats_cb _hidl
     return Void();
 }
 
-bool Power::isSupportedGovernor() {
-    std::string buf;
-    if (android::base::ReadFileToString("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor", &buf)) {
-        buf = android::base::Trim(buf);
-    }
-
-    if (buf != "schedutil" && buf != "sched") {
-        ALOGE("Governor not supported");
-        return false;
-    }
-
-    return true;
-}
-
 Return<void> Power::powerHintAsync(PowerHint_1_0 hint, int32_t data) {
     return powerHint(hint, data);
 }
 
 // Methods from ::android::hardware::power::V1_2::IPower follow.
 Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
-    if (!isSupportedGovernor() || !mReady) {
+    if (!mReady) {
         return Void();
     }
 
