@@ -51,6 +51,10 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
+# Audio (Android 10) - from cepheus QKQ1.190716.003
+-vendor/lib/libaudioparsers.so|8a7c0de52976e5bca092979952abb17de2c9968b
+-vendor/lib64/libaudioparsers.so|89469ae544d58e79deb98e350963a2657a32862c
+
 # Bluetooth
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
