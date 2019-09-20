@@ -300,7 +300,6 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libQTapGLES.so
-vendor/lib/hw/vulkan.msm8998.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -320,7 +319,6 @@ vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/hw/vulkan.msm8998.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
@@ -343,6 +341,10 @@ vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
+
+# Graphics (Vulkan) - from walleye QP1A.190711.020
+vendor/lib/hw/vulkan.msm8998.so|ad7386033138fe30a4e2943f95c0804d22073fe2
+vendor/lib64/hw/vulkan.msm8998.so|5125f7b8524a4164144e4fdcd2d1ac1126f8b735
 
 # Graphics firmware
 vendor/firmware/a530_pfp.fw
