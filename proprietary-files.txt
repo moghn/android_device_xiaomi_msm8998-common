@@ -237,27 +237,21 @@ vendor/lib64/vendor.qti.hardware.factory@1.0.so|6747dcde3e4a83684ecb384fe8167652
 vendor/lib64/vendor.qti.hardware.factory@1.1.so|17b79d1892c3517414752957e870afa3874e5fa9
 vendor/lib64/vendor.qti.latency@2.0.so|4568fe849b40d50e0aec9c4b9df3931f62b6edca
 
-# DPM
-vendor/bin/dpmQmiMgr
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
-vendor/lib64/libdpmqmihal.so
-
-# DRM and SEE
-vendor/bin/qseecomd
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libkeymasterutils.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/librpmb.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libspl.so
-vendor/lib64/libssd.so
+# DRM and SEE - from LA.UM.8.2.r1-03200-sdm660.0
+vendor/bin/qseecomd|68a5779ec80e5b0ac1cebf7d15b9036901d7bda8
+vendor/lib64/libGPreqcancel.so|8ca6be0f8f28e773654f3c24c017ea7def130e1f
+vendor/lib64/libGPreqcancel_svc.so|05616b6e734cf1bc43199a8652d64499b368bced
+vendor/lib64/libQSEEComAPI.so|d861449ff403c2728471c9f627353a6610acad4b
+vendor/lib64/libSecureUILib.so|2da11f1c956c69a6c032b2909dfdcea8b87ced64
+vendor/lib64/libStDrvInt.so|da4f168e2af64e3c341ff4da05ddd692bbcd0250
+vendor/lib64/libdrmfs.so|b472021ca24cc3fe17194563d27c9c89208c2354
+vendor/lib64/libdrmtime.so|b6c65593fa509a5a9ebfd86307c9023a665403e4
+vendor/lib64/libkeymasterdeviceutils.so|fff58f25da60594a6f68bd16343f9052a6d0ff3e
+vendor/lib64/libkeymasterprovision.so|2693b87a139c4b1e7c7c5dd41eadbe88e80773c8
+vendor/lib64/libkeymasterutils.so|a18e3040b9979e35d69bc18cd89862dc96fe37d1
+vendor/lib64/librpmb.so|942b2be039d8abd532bf278eaf4c50b1b62f15e1
+vendor/lib64/libsecureui_svcsock.so|e3edd246903e2d5d43bb16543ce6b582a928bcf0
+vendor/lib64/libssd.so|b0af54a471ef6709171dc2025b2e5d1cd473ac43
 
 # DRM (TUI)
 lib64/vendor.qti.hardware.tui_comm@1.0.so:vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
@@ -412,14 +406,16 @@ vendor/lib64/hw/keystore.msm8998.so
 vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
-# Media
--vendor/lib/libgpustats.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxVpp.so
-vendor/lib/libvpphvx.so
-vendor/lib/libvpplibrary.so
-vendor/lib/libvqzip.so
--vendor/lib64/libgpustats.so
+# Media - from LA.UM.8.2.r1-03200-sdm660.0
+vendor/lib/libOmxEvrcDec.so|9e69f84e7a952b84156d19c582d17d4a852c5da1
+vendor/lib/libvqzip.so|ba6bcf70b1bb5809ffa30b1b0b951bb367e49d08
+-vendor/lib/libgpustats.so|c2d5b3c387e693c7ea45ed393951e842da2c0525
+-vendor/lib64/libgpustats.so|44a05ad8805a1ee05d43d22a86f71b4e98158c69
+
+# Media (VPP) - from mata QP1A.190711.122
+vendor/lib/libOmxVpp.so|df61fca8f09af9f5491c2b022e2b6daed0b6be18
+vendor/lib/libvpphvx.so|fb217e4af9b3e31863b439063fb859202e70883c
+vendor/lib/libvpplibrary.so|f283a2d0db68696dec4bfc4bc71435b669d2578c
 
 # Mlipay
 lib64/vendor.xiaomi.hardware.mfidoca@1.0.so:vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
@@ -601,13 +597,13 @@ vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
-# Time services
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
-vendor/lib64/libtime_genoff.so
+# Time services - from mata QP1A.190711.122
+-vendor/app/TimeService/TimeService.apk|a7a9459a9dfdc9f8a20a9fd4ccd24035e04801c8
+vendor/bin/time_daemon|34cf6c5022a94d3ec23d3b5b486641337cc27c42
+vendor/lib64/libtime_genoff.so|0746098d7ae6c80376ceac4b4f7151cae82079b0
 
-# Wi-Fi
-vendor/bin/cnss-daemon
+# Wi-Fi - from mata QP1A.190711.122
+vendor/bin/cnss-daemon|5194d1fef86ae95c3df49e97f1a78e4cf474554f
 
 # WFD
 bin/wfdservice
