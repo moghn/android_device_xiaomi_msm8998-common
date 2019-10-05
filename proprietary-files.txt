@@ -52,6 +52,8 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
 # Audio libraries (Android 10 CAF Audio HAL) - from LA.UM.8.2.r1-04000-sdm660.0
+vendor/lib/libaudioconfigstore.so|410604c7d82ec0275a6b7f484ac006af0b85439d
+vendor/lib64/libaudioconfigstore.so|c9ff288b54824519c537f399afdc4f1e4da20574
 -vendor/lib/libaudioparsers.so|485bbd30e2ea7e40d7fbcb3d7aa1f8a222cd2fc4
 -vendor/lib64/libaudioparsers.so|ab849844b97f005231b1b3150e61cd4b67cbdb11
 
