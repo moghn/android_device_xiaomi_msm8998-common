@@ -89,7 +89,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-Alipay
+#Alipay
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
@@ -358,7 +358,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     telephony-ext \
     qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml	    
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml

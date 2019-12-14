@@ -194,3 +194,4 @@
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">亮屏时嘈杂通知</string>
     <string name="notification_sound_vib_screen_on_summary">在屏幕开启状态下，通知将发出声音与振动</string>
+</resources>
