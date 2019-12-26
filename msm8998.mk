@@ -419,3 +419,6 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 ifneq ($(wildcard vendor/gapps/common/common-vendor.mk),)
 $(eval include vendor/gapps/common/common-vendor.mk)
 endif
+
+#pixelstyle
+$(call inherit-product, vendor/pixelstyle/config.mk)
