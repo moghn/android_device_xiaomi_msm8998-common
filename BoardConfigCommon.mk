@@ -52,6 +52,8 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r370808
+#KERNEL_TOOLCHAIN := /root/nitrogen/prebuilts/gcc/$(HOST_OS)-x86/aarch64/gcc-arm-9.2-2019.12-aarch64-arm-none-linux-gnueabihf/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-none-linux-gnueabihf-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8998
 
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom
