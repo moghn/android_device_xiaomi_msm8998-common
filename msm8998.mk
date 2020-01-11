@@ -152,7 +152,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider@2.4-service \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl 
 
 # Display
 PRODUCT_PACKAGES += \
@@ -419,6 +421,3 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 ifneq ($(wildcard vendor/gapps/common/common-vendor.mk),)
 $(eval include vendor/gapps/common/common-vendor.mk)
 endif
-
-#pixelstyle
-$(call inherit-product, vendor/pixelstyle/config.mk)
