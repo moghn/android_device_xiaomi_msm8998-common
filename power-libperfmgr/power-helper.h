@@ -34,12 +34,33 @@
 extern "C" {
 #endif
 
-#include <hardware/power.h>
+enum stats_type {
+    //Platform Stats
+    RPM_MODE_XO = 0,
+    RPM_MODE_VMIN,
+    RPM_MODE_MAX,
+    XO_VOTERS_START = RPM_MODE_MAX,
+    VOTER_APSS = XO_VOTERS_START,
+    VOTER_MPSS,
+    VOTER_ADSP,
+    VOTER_SLPI,
+    MAX_PLATFORM_STATS,
+};
 
-#define INPUT_EVENT_WAKUP_MODE_OFF 4
-#define INPUT_EVENT_WAKUP_MODE_ON 5
+#define PLATFORM_SLEEP_MODES_COUNT RPM_MODE_MAX
 
-void set_feature(feature_t feature, int state);
+#define MAX_RPM_PARAMS 2
+#define XO_VOTERS (MAX_PLATFORM_STATS - XO_VOTERS_START)
+#define VMIN_VOTERS 0
+
+struct stat_pair {
+    enum stats_type stat;
+    const char *label;
+    const char **parameters;
+    size_t num_parameters;
+};
+
+int extract_platform_stats(uint64_t *list);
 
 #ifdef __cplusplus
 }
