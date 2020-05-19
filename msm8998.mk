@@ -32,7 +32,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-custom
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/xiaomi/msm8998-common
+PRODUCT_SOONG_NAMESPACES += \
+    device/xiaomi/msm8998-common \
+    hardware/google/pixel
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -374,6 +376,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# Tracing
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service.pixel
 
 # USB
 PRODUCT_PACKAGES += \
