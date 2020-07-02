@@ -53,8 +53,8 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_CLANG_COMPILE := true
 #KERNEL_TOOLCHAIN := /root/gcc-linaro/aarch64-elf-gcc-9.x/bin 
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf- 
-TARGET_KERNEL_CLANG_VERSION := r11
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8998
+TARGET_KERNEL_CLANG_VERSION := 6443087
+TARGET_KERNEL_SOURCE := kernel/xiaomi/chiron
 
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
