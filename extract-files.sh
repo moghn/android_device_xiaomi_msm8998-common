@@ -59,8 +59,8 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    etc/init/dpmd.rc)
-        echo "    disabled" >> "${2}"
+    lib64/libdpmframework.so)
+        patchelf --add-needed "libshim_dpmframework.so" "${2}"
         ;;
     lib64/libwfdnative.so)
         patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
@@ -99,12 +99,6 @@ function blob_fixup() {
     vendor/lib/libmpbase.so)
         patchelf --remove-needed "libandroid.so" "${2}"
         ;;
-    vendor/lib64/libsettings.so)
-        patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
-        ;;
-    vendor/lib64/libwvhidl.so)
-        patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
-        ;;
     esac
 }
 
@@ -124,15 +118,3 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
 fi
 
 "${MY_DIR}/setup-makefiles.sh"
-
-for i in $(grep -rn 'libhidltransport.so\|libhwbinder.so' ../../../vendor/xiaomi/"${DEVICE_COMMON}"/proprietary | awk '{print $4}'); do
-	patchelf --remove-needed "libhwbinder.so" "$i"
-	patchelf --remove-needed "libhidltransport.so" "$i"
-done
-
-for i in $(grep -rn 'libhidltransport.so\|libhwbinder.so' ../../../vendor/xiaomi/"${DEVICE}"/proprietary | awk '{print $4}'); do
-	patchelf --remove-needed "libhwbinder.so" "$i"
-	patchelf --remove-needed "libhidltransport.so" "$i"
-done
-
-python3 "${MY_DIR}/../${DEVICE_COMMON}/extract-files.sh"
