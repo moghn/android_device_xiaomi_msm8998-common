@@ -171,7 +171,7 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Doze
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     XiaomiDoze
 
 # DRM
